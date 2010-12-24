@@ -48,6 +48,13 @@ namespace Cadenza {
 			return (TEnum) Enum.Parse (typeof (TEnum), self);
 		}
 
+		public static string Format (this string self, params object[] args)
+		{
+			Check.Self (self);
+
+			return string.Format (self, args);
+		}
+
 		public static IEnumerable<string> Lines (this string self)
 		{
 			Check.Self (self);
