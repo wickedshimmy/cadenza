@@ -5,9 +5,11 @@
 //   Jb Evain (jbevain@novell.com)
 //   Jonathan Pryor <jpryor@novell.com>
 //   Kim Johansson <hagbarddenstore@gmail.com>
+//   David Siegel <djsiegel@gmail.com>
 //
 // Copyright (c) 2007-2008 Novell, Inc. (http://www.novell.com)
 // Copyright (c) 2008 Kim Johansson
+// Copyright (c) 2011 David Siegel
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the
