@@ -77,5 +77,65 @@ namespace Cadenza {
 		{
 			return (value & 0x1) == 1;
 		}
+        
+        public static TimeSpan Tick (this int value)
+        {
+            return TimeSpan.FromTicks (value);
+        }
+        
+        public static TimeSpan Ticks (this int value)
+        {
+            return TimeSpan.FromTicks (value);
+        }
+        
+        public static TimeSpan Millisecond (this int value)
+        {
+            return TimeSpan.FromMilliseconds (value);
+        }
+        
+        public static TimeSpan Milliseconds (this int value)
+        {
+            return TimeSpan.FromMilliseconds (value);
+        }
+        
+        public static TimeSpan Second (this int value)
+        {
+            return TimeSpan.FromSeconds (value);
+        }
+        
+        public static TimeSpan Seconds (this int value)
+        {
+            return TimeSpan.FromSeconds (value);
+        }
+        
+        public static TimeSpan Minute (this int value)
+        {
+            return TimeSpan.FromMinutes (value);
+        }
+        
+        public static TimeSpan Minutes (this int value)
+        {
+            return TimeSpan.FromMinutes (value);
+        }
+        
+        public static TimeSpan Hour (this int value)
+        {
+            return TimeSpan.FromHours (value);
+        }
+        
+        public static TimeSpan Hours (this int value)
+        {
+            return TimeSpan.FromHours (value);
+        }
+        
+        public static TimeSpan Day (this int value)
+        {
+            return TimeSpan.FromDays (value);
+        }
+        
+        public static TimeSpan Days (this int value)
+        {
+            return TimeSpan.FromDays (value);
+        }
 	}
 }
