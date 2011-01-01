@@ -98,6 +98,7 @@
     <Compile Include="Cadenza.Collections\SequenceComparison.cs" />
     <Compile Include="Cadenza\WeakReference.cs" />
     <Compile Include="Cadenza\DoubleCoda.cs" />
+    <Compile Include="Cadenza\TimeSpanCoda.cs" />
   </ItemGroup>
   <Import Project="..\..\lib\mdoc-net\mdoc.targets" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
