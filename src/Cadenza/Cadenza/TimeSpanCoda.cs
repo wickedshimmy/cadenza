@@ -36,6 +36,16 @@ namespace Cadenza {
         {
             return self == TimeSpan.Zero;
         }
+        
+        public static DateTime FromNow (this TimeSpan self)
+        {
+            return DateTime.Now + self;
+        }
+        
+        public static DateTime Ago (this TimeSpan self)
+        {
+            return DateTime.Now - self;
+        }
     }
 }
 
