@@ -68,7 +68,7 @@ namespace Cadenza {
 		}
 	}
 
-	public struct Maybe<T> : IEquatable<Maybe<T>> {
+	public struct Maybe<T> : IEquatable<Maybe<T>>, IEnumerable<T> {
 		private T value;
 		private bool has_value;
 
@@ -171,6 +171,55 @@ namespace Cadenza {
 			if (!n.HasValue)
 				return Maybe<TResult>.Nothing;
 			return resultSelector(Value, n.Value).ToMaybe ();
+		}
+
+		public IEnumerator<T> GetEnumerator ()
+		{
+			return new MaybeEnumerator (this);
+		}
+	
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator ()
+		{
+			return new MaybeEnumerator (this);
+		}
+		
+		class MaybeEnumerator : System.Collections.IEnumerator, IEnumerator<T>
+		{
+			bool HasMoved;
+			readonly Maybe<T> MyMaybe;
+			
+			public MaybeEnumerator (Maybe<T> maybe)
+			{
+				MyMaybe = maybe;
+			}
+
+			public T Current {
+				get {
+					return MyMaybe.Value;
+				}
+			}
+	
+			public bool MoveNext ()
+			{
+				bool canMove = !HasMoved && MyMaybe.HasValue;
+				HasMoved = true;
+				return canMove;
+			}
+	
+			public void Reset ()
+			{
+				HasMoved = false;
+			}
+	
+			object System.Collections.IEnumerator.Current {
+				get {
+					return MyMaybe.Value;
+				}
+			}
+	
+			public void Dispose ()
+			{
+			}
 		}
 	}
 }
