@@ -68,7 +68,7 @@ namespace Cadenza {
 		}
 	}
 
-	public struct Maybe<T> : IEquatable<Maybe<T>>, IEnumerable<T> {
+	public struct Maybe<T> : IEquatable<Maybe<T>> {
 		private T value;
 		private bool has_value;
 
@@ -178,11 +178,6 @@ namespace Cadenza {
 			return new MaybeEnumerator (this);
 		}
 	
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator ()
-		{
-			return new MaybeEnumerator (this);
-		}
-		
 		class MaybeEnumerator : System.Collections.IEnumerator, IEnumerator<T>
 		{
 			bool HasMoved;

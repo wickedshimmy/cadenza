@@ -267,5 +267,15 @@ namespace Cadenza.Tests {
 			Assert.AreEqual (string.Empty, Maybe<int>.Nothing.ToString ());
 			Assert.AreEqual ("42", 42.ToMaybe ().ToString ());
 		}
+
+		[Test]
+		public void DoNotation ()
+		{
+			foreach (var _ in Maybe<string>.Nothing)
+				Assert.Fail ();
+
+			foreach (var val in 42.ToMaybe ())
+				Assert.AreEqual (42, val);
+		}
 	}
 }
